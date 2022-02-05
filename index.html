@@ -9,20 +9,42 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    
-    
+    <h1>ROCK PAPER SCISSORS</h1>
+    <h3>FIRST TO WIN 5 ROUNDS WINS</h2>
         <div id="container">
-        <button id="play">Play Game</button>
+        
+        <div id = gameBoard>
+
+        
+            
+            <div class = "playerBox">
+                
+                <img id = userBox src ="pictures/questionmark.png", height="200", width="200">
+                <div id = userScore> Player: 0</div>
+                
+            </div>
+            <div class = "playerBox">
+                
+                <img id = computerBox src ="pictures/questionmark.png", height="200", width="200">
+                <div id = computerScore> Computer: 0</div>
+                
+            </div>
+            
+        </div>
+        <div id = "result">
+            <div id = "theWinner">Results</div>
+            <div id = "winner">Select a choice below to start</div>
+            
+        </div>
         <div id ="buttons">
             <button id="rock">Rock</button>
             <button id="paper">Paper</button>
             <button id="scissor">Scissor</button>
         </div>
 
-        <div id = "playerBox">
-        <div id = "userBox">You</div>
-        <div id = "computerBox">computer</div>
-        </div>
+        
+
+        <button id="reset">Reset Game</button>
         </div>
         </div>
 
