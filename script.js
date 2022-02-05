@@ -1,4 +1,17 @@
-playFiveGames()
+
+
+const rockButton = document.getElementById('rock')
+const paperButton = document.getElementById('paper')
+const scissorButton = document.getElementById('scissor')
+const playButton = document.getElementById('play')
+const userBox = document.getElementById('userBox')
+const computerBox = document.getElementById('computerBox')    
+
+
+rockButton.addEventListener('click', () => handleClick('rock'))
+paperButton.addEventListener('click', () => handleClick('paper'))
+scissorButton.addEventListener('click', () => handleClick('scissor'))
+playButton.addEventListener('click', () => handleClick('play'))
 
 
 function computerPlay(){
@@ -16,22 +29,21 @@ function computerPlay(){
 
 }
 
-function userPlay(){
-    let userEntry = prompt("Enter either rock, paper, scissor");
-
-    if(userEntry.toLowerCase() == 'rock' || userEntry.toLowerCase() == 'paper' || userEntry.toLowerCase() == 'scissor'){
-        return userEntry;
-    }
-    else {
-        console.log('Incorrect Entry!');
-        userPlay()
-
-    }
+function handleClick(playerSelection){
     
-    
+    const computerSelection = computerPlay();
+
+    playOneGame(computerSelection, playerSelection)
+    userBox.textContent = playerSelection;
+    computerBox.textContent = computerSelection;
 }
 
+
+
+
 function playOneGame(computerPlay, userPlay){
+    
+
     console.log('Rock, Paper, Scissors and shoot');
     console.log('The computer played: ' + computerPlay);
     console.log('You played: ' + userPlay);
@@ -50,12 +62,4 @@ function playOneGame(computerPlay, userPlay){
     }
 
 }
-
-function playFiveGames(){
-    for(let i=0;i<5;i++){
-        playOneGame(computerPlay(),userPlay())
-    }
-
-}
-
 
